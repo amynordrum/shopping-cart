@@ -39,9 +39,8 @@ def to_usd(my_price):
 
 print(products)
 
-selected_input = input("Please scan the next item: ")
-print(selected_input)
-print(type(selected_input))
-
-
+selected_id = input("Please scan the next item: ")
+matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+matching_product = matching_products[0]
+print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
 
