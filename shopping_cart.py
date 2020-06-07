@@ -38,3 +38,10 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 print(products)
+
+selected_input = input("Please scan the next item: ")
+print(selected_input)
+print(type(selected_input))
+
+
+
