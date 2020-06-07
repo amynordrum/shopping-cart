@@ -23,21 +23,10 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-def to_usd(my_price):
-    """
-    Converts a numeric value to usd-formatted string, for printing and display purposes.
-
-    Param: my_price (int or float) like 4000.444444
-
-    Example: to_usd(4000.444444)
-
-    Returns: $4,000.44
-    """
-    return f"${my_price:,.2f}" #> $12,000.71
 
 # TODO: write some Python code here to produce the desired output
 
-total_price = 0
+subtotal = 0
 selected_ids = []
 
 while True:
@@ -50,8 +39,9 @@ while True:
 
 # print(selected_ids)
 print("------------------")
-print("SEVENTH STREET GROCER")
-print("www.seventhstreetgrocer.com")
+print("7TH STREET GROCER")
+print("(575)575-5757")
+print("https://www.seventhstreetgrocer.com")
 
 import datetime
 
@@ -62,11 +52,18 @@ print("------------------")
 for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
-    total_price = total_price + matching_product["price"]
-    print(matching_product["name"] + " " + str(matching_product["price"]))
+    subtotal = subtotal + matching_product["price"]
+#    print(matching_product["name"] + " " + str(matching_product["price"]))
+    print (" " + matching_product["name"] + " " "${:,.2f}".format(matching_product["price"]))
     
+taxrate = 0.0875
+tax = subtotal * taxrate
+total_price = tax + subtotal
+
 print("------------------")
-print("TOTAL PRICE: " + str(total_price))
+print("SUBTOTAL: " + "${:,.2f}".format(subtotal))
+print("TAX: " + "${:,.2f}".format(subtotal * 0.0875))
+print("TOTAL PRICE: " + "${:,.2f}".format(total_price))
 print("------------------")
 print("THANKS, COME AGAIN!")
 
