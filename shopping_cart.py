@@ -40,6 +40,7 @@ while True:
 # print(selected_ids)
 print("------------------")
 print("7TH STREET GROCER")
+print("456 7th Street, New York, NY 10016")
 print("(575)575-5757")
 print("https://www.seventhstreetgrocer.com")
 
