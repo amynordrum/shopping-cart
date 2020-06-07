@@ -52,6 +52,11 @@ while True:
 print("------------------")
 print("SEVENTH STREET GROCER")
 print("www.seventhstreetgrocer.com")
+
+import datetime
+
+now = datetime.datetime.now()
+print(now.strftime("%B %d %Y %I:%M %p"))
 print("------------------")
 
 for selected_id in selected_ids:
